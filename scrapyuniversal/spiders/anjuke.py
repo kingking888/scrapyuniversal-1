@@ -16,7 +16,6 @@ class AnjukeSpider(Spider):
         self.config = config
 
     def parse(self, response):
-        time.sleep(1)
         # 获取各小区大全入口
         collections = response.css('.P3')[1].css('a::attr(href)').extract() + response.css('.P3')[2].css('a::attr(href)').extract()
         for collection in collections:
@@ -26,7 +25,6 @@ class AnjukeSpider(Spider):
             yield Request(collection, callback=self.parse_communities)
 
     def parse_communities(self, response):
-        time.sleep(1)
         # 翻页
         pages = response.css('.P4 a::attr(href)').extract()
         for page in pages:
