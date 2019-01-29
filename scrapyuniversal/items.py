@@ -1,10 +1,12 @@
 from scrapy import Field, Item
 
+
 class ImageItem(Item):
     table = Field()
     page_url = Field()
-    img_src = Field()
     crawled_at = Field()
+    img_src = Field()
+
 
 class AnjukeItem(Item):
     table = Field()
@@ -26,3 +28,11 @@ class OoopicItem(Item):
     page_url = Field()
     crawled_at = Field()
     pic_src = Field()
+
+
+class TrademarkItem(Item):
+    table = Field()
+    page_url = Field()
+    crawled_at = Field()
+    category = Field()
+    trademark = Field()
